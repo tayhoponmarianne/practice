@@ -1590,43 +1590,6 @@
   </div>
 </div>
 
-<!-- Project 6 Modal: Data Analysis Tool -->
-<div id="project6-modal" class="modal project-modal">
-  <div class="modal-content dialog">
-    <div class="head">
-      <h3 class="text-lg font-semibold">Data Analysis Tool</h3>
-      <button class="close-x hover:bg-white/10" onclick="closeModal('project6')">×</button>
-    </div>
-    <div class="body">
-      <div class="pmodal-frame">
-        <div class="pmodal-slider" data-index="0" data-images='["10secs 2.png","10secs 3.png","10secs 4.png"]'>
-          <img src="10secs 1.png" alt="Data Analysis Tool Screenshot">
-        </div>
-        <div class="pmodal-nav">
-          <button class="pmodal-btn" data-prev>‹</button>
-          <button class="pmodal-btn" data-next>›</button>
-        </div>
-      </div>
-      <div>
-        <p class="text-sm" style="color: var(--text-secondary);">
-          A comprehensive Python-based tool for data analysis, cleaning, and visualization. Designed to help analysts and researchers process large datasets efficiently with interactive charts and automated reporting.
-        </p>
-        <div class="badges mt-3">
-          <span class="badge">Python</span><span class="badge">Pandas</span><span class="badge">Matplotlib</span><span class="badge">NumPy</span>
-        </div>
-        <div class="meta">
-          <span>Development Year: 2024</span>
-          <span>Status: In Progress</span>
-          <span>Type: Desktop Application</span>
-        </div>
-        <div class="pmodal-actions">
-          <a href="#" target="_blank" class="btn-ghost">View Source Code</a>
-          <a href="#" target="_blank" class="btn-primary">Download Alpha</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
     <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto fade-in-section">
         <h2 class="text-4xl font-bold text-center mb-12" style="color: var(--text-primary);">
@@ -2055,11 +2018,15 @@
 
         // Modal functionality
         function openModal(projectId) {
-            document.getElementById(`${projectId}-modal`).style.display = 'block';
+            const modal = document.getElementById(`${projectId}-modal`);
+            if (!modal) return;
+            modal.style.display = 'block';
         }
 
         function closeModal(projectId) {
-            document.getElementById(`${projectId}-modal`).style.display = 'none';
+            const modal = document.getElementById(`${projectId}-modal`);
+            if (!modal) return;
+            modal.style.display = 'none';
         }
 
         // Close modal if user clicks outside of it
